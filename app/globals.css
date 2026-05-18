@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+:root {
+    --radius-card: 0.75rem;
+    --radius-sm: 0.25rem;
+    --radius-lg: 1rem;
+    --radius-full: 9999px;
+
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Toast slide-in animation */
+@keyframes slide-in-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-in-right {
+    animation: slide-in-right 0.3s ease-out;
+}
+
+/* Validation message fade-in animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.2s ease-out;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Typewriter cursor blink */
+@keyframes typewriter-blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@theme {
+    /* Colors */
+    --color-cream: #fff8f0;
+    --color-cream-deep: #f4f1ed;
+    --color-ink: #4a4658;
+    --color-ink-soft: #8b8799;
+    --color-ink-faint: #b8b4c4;
+    --color-mint: #10b981;
+    --color-mint-deep: #059669;
+    --color-lavender: #a78bfa;
+    --color-peach: #fb923c;
+    --color-peach-deep: #f472b6;
+    --color-rose: #f43f5e;
+    --color-blush: #ffe6e1;
+    --color-lilac: #f1ecff;
+    --color-mint-air: #e6f6ef;
+    --color-sky-air: #eaf3ff;
+    --color-butter: #fff7da;
+    --color-pearl: #f4f1ed;
+    --color-white: #ffffff;
+
+    /* Border Radius */
+    --radius-card: 0.75rem;
+    --radius-sm: 0.25rem;
+    --radius-lg: 1rem;
+    --radius-full: 9999px;
+
+    /* Box Shadow */
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+    /* Fonts */
+    --font-sans:
+        var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+    --font-display:
+        var(--font-quicksand), -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+}
+
+@layer base {
+    html {
+        @apply bg-cream text-ink;
+    }
+
+    body {
+        @apply min-h-screen bg-cream text-ink font-sans;
+    }
+}
+
+@layer utilities {
+    .font-display {
+        font-family: var(--font-display);
+    }
+}
