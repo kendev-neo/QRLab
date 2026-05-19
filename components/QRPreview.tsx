@@ -430,8 +430,8 @@ const QRPreview: React.FC<QRPreviewProps> = ({ qrValue, customization }) => {
             </p>
 
             {/* Preview area with loading state */}
-            <div className="flex items-center justify-center bg-white rounded-xl p-6 mb-5 overflow-hidden min-h-[200px] border border-lavender/20 relative">
-                <div style={wrapperStyle}>
+            <div className="flex items-center justify-center bg-white rounded-[2rem] p-6 mb-5 overflow-hidden min-h-[320px] border border-lavender/20 relative">
+                <div style={wrapperStyle} className="w-full max-w-[420px]">
                     {/* QR canvas with optional background image overlay */}
                     <div
                         style={{
@@ -439,9 +439,9 @@ const QRPreview: React.FC<QRPreviewProps> = ({ qrValue, customization }) => {
                             display: "block",
                             lineHeight: 0,
                             flexShrink: 0,
-                            borderRadius: "18px",
+                            borderRadius: "20px",
                             overflow: "hidden",
-                            boxShadow: "0 2px 12px 0 rgba(100,90,160,0.07)",
+                            boxShadow: "0 2px 16px 0 rgba(100,90,160,0.08)",
                         }}
                     >
                         {/* Background image overlay — rendered BEHIND the QR canvas */}
@@ -482,18 +482,18 @@ const QRPreview: React.FC<QRPreviewProps> = ({ qrValue, customization }) => {
             </div>
 
             {/* Download buttons */}
-            <div className="grid grid-cols-2 gap-2 mb-4">
+            <div className="grid grid-cols-2 gap-3 mb-4">
                 {["png", "jpeg", "svg", "pdf"].map((f) => (
                     <button
                         key={f}
                         onClick={() => handleDownload(f)}
                         disabled={isDownloading}
-                        className={`flex items-center justify-center gap-2 rounded-full py-2.5 text-sm font-display font-semibold transition ${
-                            isDownloading ? "opacity-60 cursor-not-allowed" : ""
+                        className={`flex items-center justify-center gap-2 rounded-full py-3 text-sm font-display font-semibold transition duration-200 ${
+                            isDownloading ? "opacity-60 cursor-not-allowed" : "hover:-translate-y-[0.5px]"
                         } ${
                             format === f
-                                ? "bg-peach text-white"
-                                : "border border-ink/10 bg-white text-ink-soft hover:text-ink"
+                                ? "bg-peach text-white shadow-(--shadow-soft)"
+                                : "border border-lavender/30 bg-white text-ink-soft hover:text-ink"
                         }`}
                     >
                         {isDownloading && format === f ? (

@@ -77,6 +77,8 @@
 ```bash
 # Run the development server and visit http://localhost:3000
 npm run dev
+# or with Bun
+bun run dev
 ```
 
 ---
@@ -97,9 +99,13 @@ cd qrlab
 
 # Install dependencies
 npm install
+# or with Bun
+bun install
 
 # Run development server
 npm run dev
+# or with Bun
+bun run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -109,12 +115,17 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ```bash
 npm run build
 npm start
+# or with Bun
+bun run build
+bun run start
 ```
 
 ### Lint
 
 ```bash
 npm run lint
+# or with Bun
+bun run lint
 ```
 
 ---
