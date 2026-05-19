@@ -421,7 +421,7 @@ const QRPreview: React.FC<QRPreviewProps> = ({ qrValue, customization }) => {
     };
 
     return (
-        <div className="bg-white rounded-(--radius-card) p-4 sm:p-6 shadow-(--shadow-soft)">
+        <div className="bg-white rounded-(--radius-card) p-4 sm:p-6 shadow-(--shadow-soft) ">
             <h2 className="text-lg sm:text-xl font-display font-bold text-ink mb-1">
                 2. Preview
             </h2>
@@ -489,7 +489,9 @@ const QRPreview: React.FC<QRPreviewProps> = ({ qrValue, customization }) => {
                         onClick={() => handleDownload(f)}
                         disabled={isDownloading}
                         className={`flex items-center justify-center gap-2 rounded-full py-3 text-sm font-display font-semibold transition duration-200 ${
-                            isDownloading ? "opacity-60 cursor-not-allowed" : "hover:-translate-y-[0.5px]"
+                            isDownloading
+                                ? "opacity-60 cursor-not-allowed"
+                                : "hover:-translate-y-[0.5px]"
                         } ${
                             format === f
                                 ? "bg-peach text-white shadow-(--shadow-soft)"

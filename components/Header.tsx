@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useLang, t } from "../contexts/LangContext";
 
@@ -8,14 +9,25 @@ const Header: React.FC = () => {
     const tr = t[lang];
 
     return (
-        <header className="bg-cream px-4 py-3 shadow-(--shadow-soft) sticky top-0 z-50">
+        <header className="bg-cream px-4 py-3 shadow-(--shadow-soft) sticky top-0 z-50 ">
             <div className="mx-auto max-w-7xl flex items-center justify-between gap-4">
                 {/* Logo */}
                 <Link
                     href="/"
-                    className="text-2xl font-display font-bold text-ink hover:text-peach-deep transition"
+                    className="inline-flex items-center gap-3 rounded-full bg-white/70 px-3 py-2 shadow-(--shadow-soft) transition hover:bg-white"
                 >
-                    QRLab
+                    <span className="inline-flex items-center justify-center rounded-2xl bg-peach-deep/10 text-peach-deep p-2 shadow-(--shadow-soft)">
+                        <Image
+                            src="/logo.svg"
+                            alt="QRLab logo"
+                            width={24}
+                            height={24}
+                            className="h-6 w-6"
+                        />
+                    </span>
+                    <span className="text-2xl font-display font-bold text-ink transition hover:text-peach-deep">
+                        QRLab
+                    </span>
                 </Link>
 
                 {/* Nav */}

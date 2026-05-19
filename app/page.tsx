@@ -97,7 +97,10 @@ const HomePage: React.FC = () => {
                 </section>
 
                 {/* Main Editor Section */}
-                <section id="editor" className="mt-14 sm:mt-16">
+                <section
+                    id="editor"
+                    className="scroll-mt-28 mt-14 sm:scroll-mt-32 sm:mt-16"
+                >
                     <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.15fr)]">
                         <div className="order-1 min-w-0">
                             <QRTypeSelector
@@ -107,7 +110,7 @@ const HomePage: React.FC = () => {
                             />
                         </div>
 
-                        <div className="order-2 min-w-0 lg:sticky lg:top-4 lg:self-start">
+                        <div className="order-2 min-w-0 lg:sticky lg:top-22 lg:self-start">
                             <QRPreview
                                 qrValue={qrValue}
                                 customization={customization}

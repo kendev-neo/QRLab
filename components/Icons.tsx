@@ -7,6 +7,41 @@ interface IconProps {
     className?: string;
 }
 
+export const Logo: React.FC<IconProps> = ({
+    width = 28,
+    height = 28,
+    className,
+}) => (
+    <svg
+        width={width}
+        height={height}
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={className}
+    >
+        <rect
+            x="1"
+            y="1"
+            width="30"
+            height="30"
+            rx="8"
+            fill="currentColor"
+            fillOpacity="0.08"
+        />
+        <path d="M8 8h8v8H8zM8 20h8v8H8zM20 8h8v8h-8z" fill="currentColor" />
+        <rect x="20" y="20" width="4" height="4" fill="currentColor" />
+        <path
+            d="M20 16h4v4"
+            stroke="currentColor"
+            strokeWidth="1.75"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <circle cx="17" cy="17" r="1.5" fill="currentColor" />
+    </svg>
+);
+
 export const PaletteIcon: React.FC<IconProps> = ({
     width = 24,
     height = 24,

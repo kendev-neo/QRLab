@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     title: "QRLab — QR codes that actually look good. Free, no signup.",
     description:
         "Free QR code generator with logos, colors, gradients, and frame borders. 12 types — Wi-Fi, vCard, WhatsApp, payments. No signup, no watermark.",
+    icons: {
+        icon: "/favicon.ico",
+    },
 };
 
 export default function RootLayout({
